@@ -1,9 +1,17 @@
 json.partial! @student, partial: 'student', as: :student
 
-json.array! @student.skills, partial: 'skill', as: :skill
+json.skills do  
+  json.array! @student.skills, partial: 'api/skills/skill', as: :skill
+end 
 
-json.array! @student.experiences, partial: 'experience', as: :experience
+json.experiences do 
+  json.array! @student.experiences, partial: 'api/experiences/experience', as: :experience
+end 
 
-json.array! @student.educations, partial: 'education', as: :education
+json.educations do 
+  json.array! @student.educations, partial: 'api/educations/education', as: :education
+end 
 
-json.array! @student.capstones, partial: 'capstone', as: :capstone
+json.capstones do 
+  json.array! @student.capstones, partial: 'api/capstones/capstone', as: :capstone
+end 
