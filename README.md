@@ -1,24 +1,7 @@
 # README
+#### Clone this app (git clone https://github.com/code-acadani/resume-data-api.git)
+#### bundle install
+#### rails db:setup
+#### rails s
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### visit localhost:3000/api/students/1 to see the students show page!
