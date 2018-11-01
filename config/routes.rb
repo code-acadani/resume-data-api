@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :experiences
   resources :educations
   resources :capstones
+  post "/sessions" => "sessions#create"
  end 
 end

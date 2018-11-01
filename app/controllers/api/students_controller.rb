@@ -1,5 +1,7 @@
 class Api::StudentsController < ApplicationController
 
+  before_action :authenticate_student, except: [:index, :show]
+
   def index
     @students = Student.all
     render 'index.json.jbuilder'

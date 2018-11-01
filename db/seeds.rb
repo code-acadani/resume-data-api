@@ -20,7 +20,8 @@
     personal_blog_website_url: Faker::SiliconValley.url, 
     online_resume_url: Faker::SiliconValley.url,
     github_url: Faker::SiliconValley.url,
-    photo: Faker::Fillmurray.image 
+    photo: Faker::Fillmurray.image,
+    password: last_name 
     )
 end 
 

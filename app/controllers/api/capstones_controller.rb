@@ -1,10 +1,11 @@
 class Api::CapstonesController < ApplicationController
 
+  before_action :authenticate_student, except: [:show]
   
   def show
     capstone_id = params[:id]
     @capstone = Capstone.find_by(id: capstone_id)
-    render 'show.json.jubuilder'
+    render 'show.json.jbuilder'
   end
 
   def create
@@ -14,6 +15,7 @@ class Api::CapstonesController < ApplicationController
       description: params[:description], 
       url: params[:url], 
       screenshot: params[:screenshot], 
+      student_id: current_student.id
       )
       if @capstone.save
         render "show.json.jbuilder"

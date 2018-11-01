@@ -1,9 +1,11 @@
 class Api::EducationsController < ApplicationController
 
+  before_action :authenticate_student, except: [:show]
+
    def show
      education_id = params[:id]
      @education = Education.find_by(id: education_id)
-     render 'show.json.jubuilder'
+     render 'show.json.jbuilder'
    end
 
    def create
@@ -13,6 +15,7 @@ class Api::EducationsController < ApplicationController
        description: params[:description], 
        url: params[:url], 
        screenshot: params[:screenshot], 
+       student_id: current_student.id
        )
        if @education.save
          render "show.json.jbuilder"
