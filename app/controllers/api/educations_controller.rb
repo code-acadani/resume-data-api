@@ -26,7 +26,7 @@ class Api::EducationsController < ApplicationController
 
   def update
     education_id = params[:id]
-    @education = Education.find_by(education_id)
+    @education = Education.find_by(id: education_id)
 
     @education.name = params[:name] || @education.name
     @education.description = params[:description] || @education.description

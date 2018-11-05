@@ -15,7 +15,7 @@ class Api::StudentsController < ApplicationController
 
   def update
     student_id = params[:id]
-    @student = Student.find_by(student_id)
+    @student = Student.find_by(id: student_id)
 
     @student.first_name = params[:first_name] || @student.first_name
     @student.last_name = params[:last_name] || @student.last_name

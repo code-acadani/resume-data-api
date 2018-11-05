@@ -26,7 +26,7 @@ class Api::CapstonesController < ApplicationController
 
  def update
    capstone_id = params[:id]
-   @capstone = Capstone.find_by(capstone_id)
+   @capstone = Capstone.find_by(id: capstone_id)
 
    @capstone.name = params[:name] || @capstone.name
    @capstone.description = params[:description] || @capstone.description
